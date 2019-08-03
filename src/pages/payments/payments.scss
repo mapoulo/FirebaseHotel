@@ -1,0 +1,36 @@
+page-payments {
+
+    .container{
+        display: flex;
+        justify-items: center;
+        height: 100%;
+        width: 100%;
+        background-color: white;
+    }
+
+    .one{
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        width: 50%;
+        height: 80%;
+        background-color: yellow;
+    }
+
+    .banks{
+        display: flex;
+        flex-direction: column; 
+    }
+
+    .fnb{
+        height: 20%;
+        margin-top: 2px;
+    }
+
+    .two{
+        margin: auto;
+        width: 50%;
+        height: 80%;
+        background-color: blue;
+    }
+}

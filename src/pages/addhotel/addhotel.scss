@@ -1,0 +1,85 @@
+page-addhotel {
+  
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 100%;
+        background-color: #f5f5f5;
+    }
+  
+  
+    .logo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 50%;
+        background-color: rgb(91, 182, 235);
+    }
+    
+    .image{
+        height: 100px;
+        width: 100px;
+        border-radius: 50px;
+        background-color: white;
+        margin: auto;
+      
+    }
+
+    .btn{
+        height: 40px;
+        width: 60%;
+        background-image: linear-gradient(to right, rgb(91, 182, 235) , rgb(113, 227, 235));
+        color: white;
+        border-radius: 60px;
+        border: 2px solid white;
+       font-size: 20px;
+    }
+
+    .Button{
+        display: flex;
+        justify-content: center;
+        position: relative;
+        bottom: 20px;
+        
+    }
+
+    .details{
+        padding: 2%;
+        width: 100%;
+    }
+
+    .d1{
+        display: flex;
+        width: 60%;
+        justify-content: space-evenly;
+    }
+
+  .input{
+    // background-color: red;
+   
+  }
+
+  .icon{
+     margin-top: 16px;
+     margin-right: 5px;
+     border-bottom: 1px solid gray;
+  }
+  ion-input{
+ border-bottom: 1px solid gray;
+  }
+
+  .btn2{
+    margin: auto;
+    height: 40px;
+    width: 60%;
+    background-image: linear-gradient(to right, rgb(91, 182, 235) , rgb(113, 227, 235));
+    color: white;
+    border-radius: 60px;
+    border: 2px solid white;
+    font-size: 20px;
+  }
+
+}

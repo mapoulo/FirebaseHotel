@@ -1,0 +1,23 @@
+
+<ion-content>
+  <div class="container">
+             
+      <ion-list>
+        <ion-item *ngFor = "let item of array" >
+          <div class="item">
+              <div class="pic">
+                  <img src="{{item.HotelImage}}" class="image">
+              </div>
+              <div class="det">
+                   {{item.HotelName}}<br/>
+                   {{item.HotelDescription}}<br />
+                   {{item.HotelLocation}}<br />
+                   {{item.HotelRoomPrice}}<br />
+                   <button (click)="book()" class="btn">Book</button>
+              </div>
+          </div>            
+        </ion-item>
+      </ion-list>       
+    
+  </div>
+</ion-content>
