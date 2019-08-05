@@ -57,25 +57,28 @@ takePhoto(sourcetype: number) {
   }, (err) => {
    // Handle error
   });
+
+
+  
+  let storageRef = firebase.storage().ref();
+  const filename = Math.floor(Date.now() / 1000);
+  let file = 'my-hotel/'+filename+'.jpg';
+  const imageRef = storageRef.child(file);
+  imageRef.putString(this.picture, firebase.storage.StringFormat.DATA_URL)
+  .then((snapshot) => {
+    console.log('image uploaded');
+    this.Picture_url = snapshot.downloadURL;
+    let alert = this.alertCtrl.create({
+      title: 'Image Upload', 
+      subTitle: 'Image Uploaded to firebase',
+      buttons: ['Ok']
+    }).present();
+  })
 }
 
-uploadImage(){
 
-    let storageRef = firebase.storage().ref();
-    const filename = Math.floor(Date.now() / 1000);
-    let file = 'my-hotel/'+filename+'.jpg';
-    const imageRef = storageRef.child(file);
-    imageRef.putString(this.picture, firebase.storage.StringFormat.DATA_URL)
-    .then((snapshot) => {
-      console.log('image uploaded');
-      this.Picture_url = snapshot.downloadURL;
-      let alert = this.alertCtrl.create({
-        title: 'Image Upload', 
-        subTitle: 'Image Uploaded to firebase',
-        buttons: ['Ok']
-      }).present();
-    })
-}
+
+
 
 
 // addHotelDetails(){

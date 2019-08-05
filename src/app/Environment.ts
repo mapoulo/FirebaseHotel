@@ -1,11 +1,11 @@
 export const firebaseConfig = {
-  apiKey: "AIzaSyAN3ta_ZOZUcZv9FAdjmfHs1a9G9fLg9T0",
-  authDomain: "fir-1-201e7.firebaseapp.com",
-  databaseURL: "https://fir-1-201e7.firebaseio.com",
-  projectId: "fir-1-201e7",
-  storageBucket: "gs://fir-1-201e7.appspot.com/",
-  messagingSenderId: "345276339120",
-  appId: "1:345276339120:web:4b650c85ef312f6e"
+    apiKey: "AIzaSyCGJlVMOJuTF1-hawrLUEXFHIA1yz2QzjQ",
+    authDomain: "hotelapp-8d97d.firebaseapp.com",
+    databaseURL: "https://hotelapp-8d97d.firebaseio.com",
+    projectId: "hotelapp-8d97d",
+    storageBucket: "hotelapp-8d97d.appspot.com/",
+    messagingSenderId: "1066978565810",
+    appId: "1:1066978565810:web:b4c9d1d4b41b2014"
   };
 
   export const SnapShots = snap => {

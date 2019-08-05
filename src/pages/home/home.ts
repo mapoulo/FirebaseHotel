@@ -5,8 +5,8 @@ import { AddhotelPage } from '../addhotel/addhotel';
 import { BookingPage } from '../booking/booking';
 import { ProfilePage } from '../profile/profile';
 import { RoomdetailsPage } from '../roomdetails/roomdetails';
-
-
+import { SnapShots } from '../../app/Environment';
+import * as firebase from 'firebase';
 
 
 
@@ -16,21 +16,13 @@ import { RoomdetailsPage } from '../roomdetails/roomdetails';
 })
 export class HomePage {
 
-  
-  M = [
-    {name: 'Nkwe'},
-    {name: 'Nkwe'},
-    {name: 'Nkwe'},
-    {name: 'Nkwe'},
-    {name: 'Nkwe'},
-    {name: 'Nkwe'},
-    {name: 'Nkwe'},
-    {name: 'Nkwe'},
-    {name: 'Nkwe'},
-  ];
+  MyArray = [];
+  ref = firebase.database().ref('rooms/');
 
   constructor(public navCtrl: NavController) {
-
+   this.ref.on('value', res => {
+     this.MyArray = SnapShots(res);
+   })
   }
 
   profile(){
