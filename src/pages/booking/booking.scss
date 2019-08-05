@@ -11,7 +11,7 @@ page-booking {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 80%;
+    height: 70%;
     background-color: rgb(241, 235, 235);
     border-bottom-left-radius: 80px;
   }
@@ -19,7 +19,7 @@ page-booking {
   .dis{
     height: 10%;
     width: 100%;
-    background-color: rgb(91, 182, 235);
+    background-image: linear-gradient(to right, rgb(91, 182, 235) , rgb(113, 227, 235));
   }
 
   .save{

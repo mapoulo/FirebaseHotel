@@ -21,12 +21,16 @@ page-roomdetails {
         flex-direction: column;
         justify-content: space-around;
         width: 80%;
-        height: 20%;
-        background-color:white;
+        height: 25%;
+        background-color: white;
         position: absolute;
         top: 21%;
-        border-radius: 10px;
-        
+        border-radius: 10px;  
+    }
+
+    .logine{
+        height: 100%;
+        border-radius: 10px;  
     }
 
 
@@ -75,6 +79,12 @@ page-roomdetails {
 
   .slides{
       height: 60%;
+      background-color: red;
+  }
+
+  .slideses{
+      height: 60%;
+      width: 100%
   }
 
    .BookButton{

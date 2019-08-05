@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SnapShots } from '../../app/Environment';
 import * as firebase from 'firebase';
+import { HomePage } from '../home/home';
+
 
 /**
  * Generated class for the PaymentsPage page.
@@ -38,8 +40,8 @@ export class PaymentsPage {
  
   }
 
-  con(){
-    
+  home(){
+    this.navCtrl.push(HomePage);
   }
   
 

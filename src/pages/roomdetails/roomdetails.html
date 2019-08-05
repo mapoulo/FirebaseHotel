@@ -1,6 +1,6 @@
 
 
-<ion-content>
+<ion-content *ngFor =  "let item of MyArray">
     
 
   <div class="container">
@@ -9,37 +9,35 @@
 
         </div>
 
-        <div class="login">
-         
-        
+        <div class="login" >
+         <img src="{{item.image}}" alt="" class="logine" >
           </div>
 
           
           <div class="last">
               <h4>Description</h4>
-              <h6>asdhhhhhhhvbabvfsghsgfdhsfghsghjdghjddghfdghghjfghjtyjkjlkkjljhljjk</h6>
-
+             {{item.Description}}
         
               <h4>Photos</h4>
 
 
               <ion-slides pager class="slides">
-                  <ion-slide style="background-color: green">
-                    <h2>Slide 1</h2>
+                  <ion-slide  class="slideses" >
+                    <img src="{{item.image}}" alt="" class="slideses" >
                   </ion-slide>
                 
-                  <ion-slide style="background-color: blue">
-                    <h2>Slide 2</h2>
+                  <ion-slide  class="slideses">
+                    <img src="{{item.image}}" alt="" class="slideses" >
                   </ion-slide>
                 
-                  <ion-slide style="background-color: red">
-                    <h2>Slide 3</h2>
+                  <ion-slide class="slideses">
+                    <img src="{{item.image}}" alt="" class="slideses" >
                   </ion-slide>
                 </ion-slides><br>
+               
                 <div class="Bbtn">
-                    <button class="BookButton" (click)="booknow()">Book</button>
-                </div>
-           
+                  <button class="BookButton" (click)="booknow()">Book</button>
+              </div>
           </div>
         
   </div>

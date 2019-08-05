@@ -5,6 +5,7 @@ import { IonicPage, NavController, NavParams, AlertController, LoadingController
 import * as firebase from 'firebase';
 import { LoginPage } from '../login/login';
 import { HomePage } from '../home/home';
+import { SnapShots } from '../../app/Environment';
 
 /**
  * Generated class for the RegistrationPage page.
@@ -19,13 +20,20 @@ import { HomePage } from '../home/home';
   templateUrl: 'registration.html',
 })
 export class RegistrationPage {
+
+ref = firebase.database().ref('Users/');
+
   user =  {} as Users;
+
   constructor(
     public navCtrl: NavController, 
     public alertCtrl: AlertController,
     public navParams: NavParams,
     public loadingCtrl: LoadingController
     ) {
+    this.ref.on('value', res => {
+      SnapShots(res);
+    })
   }
 
   ionViewDidLoad() {
@@ -33,7 +41,7 @@ export class RegistrationPage {
   }
 
   createRegister() {
-    if (this.user.email ===undefined && this.user.password===undefined)
+    if (this.user.email ===undefined && this.user.password===undefined && this.user.Name===undefined && this.user.Mobile===undefined)
     {
       let alertSuccess = this.alertCtrl.create({
            title: '',
@@ -42,6 +50,8 @@ export class RegistrationPage {
           });
           alertSuccess.present();
         }else{
+         let Person = this.ref.push();
+         Person.set(this.user); 
     let loading = this.loadingCtrl.create({
       content: 'Please wait...',
       duration: 2000
