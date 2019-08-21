@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
+import { ErrorHandler, NgModule} from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -16,6 +16,8 @@ import { BookingPage } from '../pages/booking/booking';
 import { PaymentsPage } from '../pages/payments/payments';
 import { ProfilePage } from '../pages/profile/profile';
 import { RoomdetailsPage } from '../pages/roomdetails/roomdetails';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Profile2Page } from '../pages/profile2/profile2';
 
 
 @NgModule({
@@ -29,11 +31,15 @@ import { RoomdetailsPage } from '../pages/roomdetails/roomdetails';
     BookingPage,
     PaymentsPage,
     ProfilePage,
-    RoomdetailsPage
+    RoomdetailsPage,
+    Profile2Page
   ],
+
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    FormsModule,
+    ReactiveFormsModule
    
   ],
   bootstrap: [IonicApp],
@@ -47,13 +53,15 @@ import { RoomdetailsPage } from '../pages/roomdetails/roomdetails';
     BookingPage,
     PaymentsPage,
     ProfilePage,
-    RoomdetailsPage
+    RoomdetailsPage,
+    Profile2Page
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
-  ]
+  ],
+  
 })
 export class AppModule {}

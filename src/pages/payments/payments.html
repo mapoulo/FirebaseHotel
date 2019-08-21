@@ -1,5 +1,5 @@
 <ion-content>
-  <div class="container">
+  <!-- <div class="container">
 
    <div class="one">
       <h5>How would you like to pay?</h5>
@@ -24,21 +24,121 @@
 
    <div class="two">
      <h6>CARDHOLDERS NAME</h6>
-     <input type="text" class="input">
+     <input type="text" class="input" [(ngModel)]="name">
      <h6>CARD NUMBER</h6>
-     <input type="text" class="input">
+     <input type="text" class="input" [(ngModel)]="card">
 
      <h6>EPIRATION DATE</h6>
-     <input type="text" class="input">
+     <input type="text" class="input" [(ngModel)]="date">
 
      <h6>CCV</h6>
-     <input type="text" class="input"> 
+     <input type="text" class="input" [(ngModel)]="ccv"> 
 
      <div class="Buton">
-      <button class="Button" (click)="home()">Submit</button>
+      <button class="Button" (click)="home(user.name)">Submit</button>
      </div>
 
    </div>
 
+  </div> -->
+
+  <div class="container">
+   
+      <div class="logo">
+          <div class="method">
+              <h5>How would you like to pay?</h5>
+              <div class="method1">
+                  <img src="../../assets/imgs/masterCard.png" alt="" class="fnb">
+                  <img src="../../assets/imgs/Express.png" alt="" class="fnb">
+                  <img src="../../assets/imgs/visa.png" alt="" class="fnb">
+              </div>
+           </div>
+        </div>
+
+        <!-- <div class="login">
+
+            <form  [formGroup]="loginForm" class="login">
+          
+              <div class="data">
+                  <h6>CARDHOLDERS NAME</h6>
+                  <input type="text"  formControlName="name" class="input" [(ngModel)]="name">
+                  <h6>CARD NUMBER</h6>
+                  <input type="text" class="input" [(ngModel)]="card">
+             
+                  <h6>EPIRATION DATE</h6>
+                  <input type="text" class="input" [(ngModel)]="date">
+             
+                  <h6>CCV</h6>
+                  <input type="text" class="input" [(ngModel)]="ccv"> 
+             
+
+              </div>
+             
+        <div class="button">
+            <button class="loginButton" (click)="home()">Submit</button><br>
+           
+        </div>
+      </form>
+        
+          </div> -->
+
+          <div class="login">
+              <!-- <h1>Register</h1> -->
+    
+              
+              <form  [formGroup]="loginForm" class="login">
+            
+                  <input type="text" formControlName="name" [(ngModel)]="users.name" placeholder="name" class="ion_input">
+    
+                  <div class="error" *ngFor="let validate of validation_messages.name">
+                      <div class="messages" *ngIf="loginForm.get('name').hasError(validate.type) && (loginForm.get('name').dirty || loginForm.get('name').touched)">
+                        {{validate.message}}
+                      </div>
+                    </div>
+    
+    
+                  <input type="password" formControlName="card"  [(ngModel)]="users.card"  placeholder="card" class="ion_input">
+    
+                  <div class="error" *ngFor="let validate of validation_messages.card">
+                      <div class="messages" *ngIf="loginForm.get('card').hasError(validate.type) && (loginForm.get('card').dirty || loginForm.get('card').touched)">
+                        {{validate.message}}
+                      </div>
+                    </div>
+    
+    
+    
+                  <input type="text" formControlName="date" [(ngModel)]="users.date"  placeholder="date" class="ion_input">
+    
+                  <div class="error" *ngFor="let validate of validation_messages.date">
+                      <div class="messages" *ngIf="loginForm.get('date').hasError(validate.type) && (loginForm.get('date').dirty || loginForm.get('date').touched)">
+                        {{validate.message}}
+                      </div>
+                    </div>
+    
+    
+    
+                  <input type="text" formControlName="ccv"  [(ngModel)]="users.ccv"  placeholder=" ccv" class="ion_input">
+    
+                  <div class="error" *ngFor="let validate of validation_messages.ccv">
+                      <div class="messages" *ngIf="loginForm.get('ccv').hasError(validate.type) && (loginForm.get('ccv').dirty || loginForm.get('ccv').touched)">
+                        {{validate.message}}
+                      </div>
+                    </div>
+    
+    
+                    <div class="button">
+                        <button class="loginButton" (click)="home()">Submit</button><br>
+                       
+                    </div>
+    
+    
+              </form>
+    
+             
+            
+            
+              </div>
+          
   </div>
+
 </ion-content>

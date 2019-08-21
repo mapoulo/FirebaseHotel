@@ -2,22 +2,53 @@
 
 
   <div class="container">
-   
+ 
       <div class="logo">
-
+<img src="../../assets/imgs/splash.png" class="img">
         </div>
 
         <div class="login">
-          <h1>Login</h1>
-         
-              <input type="text" [(ngModel)]="user.email" placeholder="Email" class="ion_input">
+          <!-- <h1>Login</h1> -->
+          <form  [formGroup]="loginForm" class="login">
+              <ion-item style="background-color: transparent;color: seashell" class="Ite">
+                  <ion-label floating   class="float">Email</ion-label>
+                  <ion-input type="text" formControlName="email" [(ngModel)]="users.email" class="ion_input"></ion-input>
+                </ion-item> 
+                
+                <div class="error" *ngFor="let validate of validation_messages.email">
+                 <div class="messages" *ngIf="loginForm.get('email').hasError(validate.type) && (loginForm.get('email').dirty || loginForm.get('email').touched)">
+                   {{validate.message}}
+                 </div>
+               </div>
+
+                <ion-item style="background-color: transparent;color: seashell" class="Ite">
+                    <ion-label floating class="float">Password</ion-label>
+                  <ion-input type="password" formControlName="password" [(ngModel)]="users.password" class="ion_input"></ion-input>
+                </ion-item>
+                
+                <div class="error" *ngFor="let validate of validation_messages.password">
+                 <div class="messages" *ngIf="loginForm.get('password').hasError(validate.type) && (loginForm.get('password').dirty || loginForm.get('password').touched)">
+                   {{validate.message}}
+                 </div>
+               </div>
+               
+               <div class="bb">
+                  <button ion-button class="loginButton"  (click)="login()">Login</button><br>
+
+                  <h3 (click)="Register()" class="loginButtone">Create an Account</h3>
+                  <!-- <button ion-button class="loginButtone" ></button> -->
+               </div>
+              
+                  <!-- <button class="loginButtone"   (click)="openRegisterPage()"> Create account</button> -->
+          </form>
+              <!-- <input  type="text" formControlName="email" [(ngModel)]="users.email" class="ion_input">
               <input type="password"   [(ngModel)]="user.password"  placeholder="password" class="ion_input">
-      
-        <div class="button">
+       -->
+        <!-- <div class="button">
             <button class="loginButton" (click) ="login()">Login</button><br>
-            <button class="loginButtone" (click)="Register()"> Create account</button>
            
-        </div>
+           
+        </div> -->
         
         
           </div>

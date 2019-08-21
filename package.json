@@ -27,9 +27,11 @@
     "@ionic/storage": "2.2.0",
     "cordova-android": "8.0.0",
     "cordova-plugin-camera": "4.1.0",
+    "cordova-plugin-compat": "1.2.0",
     "firebase": "^6.3.1",
     "ionic-angular": "3.9.5",
     "ionicons": "3.0.0",
+    "moment": "^2.24.0",
     "rxjs": "5.5.11",
     "sw-toolbox": "3.6.0",
     "zone.js": "0.8.29"
@@ -57,7 +59,8 @@
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-camera": {
         "ANDROID_SUPPORT_V4_VERSION": "27.+"
-      }
+      },
+      "cordova-plugin-compat": {}
     },
     "platforms": [
       "android"

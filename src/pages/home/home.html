@@ -1,49 +1,32 @@
-<ion-header>
+
   <ion-toolbar class="title">
-    <!-- <ion-buttons start>
-      <button ion-button icon-only color="royal">
-        <ion-icon name="search"></ion-icon>
-      </button>
-    </ion-buttons> -->
-    <ion-title ><h1 class="h1">Four Seasons</h1></ion-title>
-    <ion-buttons end >
-      <button ion-button icon-only color="royal" (click)="profile()">
+    <h1 class="h1">Four Seasons Hotel</h1>
+    <ion-buttons end  >
+      <!-- <div class="profile2" *ngFor="let u of user;"> -->
+        <img  (click)="profile()" class="profiless">
+        <button (click)="profile()"></button>
+        <!-- src="{{u.Image}}" alt="" -->
+      <!-- </div> -->
+      <!-- <button ion-button icon-only color="royal" (click)="profile()">
         <ion-icon ios="ios-contact" md="md-contact" class="person" ></ion-icon>
-      </button>
+      </button> -->
     </ion-buttons>
   </ion-toolbar>
-</ion-header>
+
 
 
 
 <ion-content >
     <div class="container">
   
-      <!-- <div class="navBar">
-        <div class="One">
-            <h1 class="rent">Four Seasons Hotel</h1>
-            <ion-icon name="contact"></ion-icon>
-        </div>
-        
-        <img src="../../assets/imgs/Employes.png" alt="" class="Emp">
-      </div> -->
-  
-  
-      <ion-card class="card" *ngFor = "let item of MyArray">
-       
-       <div class="One1">
-          <img src="{{item.image}}" alt="">
-        </div>
-          
+      <ion-card *ngFor = "let item of MyArray">
+          <img src="{{item.image}}" alt="" class="card">
           <ion-card-content  class="CardContents">
-            <div class="CardOne">
-  
-              <div class="C1">
-  
+            <div class="CardOne"> 
+              <div class="C1"> 
                   <div class="RoomName">
-                      <h3>RoomName</h3>
-                    </div>
-                 
+                      {{item.RoomType}}
+                    </div>                 
                                <div class="star">
                                    <ion-icon name="star"></ion-icon>
                                    <ion-icon name="star"></ion-icon>
@@ -51,41 +34,20 @@
                                    <ion-icon name="star"></ion-icon>
                                    <ion-icon name="star"></ion-icon>
                                </div>
-              </div>
-  
+              </div> 
               <div class="C2">
                 <div class="Prce">
-                  R 500
+                 R {{item.Price}}.00              
                 </div>
-                <div class="fab">
-                   
-                        <button class="fabButton" (click)="rooms()">
-                            <ion-fab vertical="bottom" horizontal="end" slot="fixed" class="fabButton">
-                          <ion-icon name="arrow-dropright"></ion-icon>
-                            </ion-fab>
-                        </button>
-                    
-                </div>
-              </div>
-  
+
+                        <button class="fabButt" (click)="rooms({price:item.Price, roomType:item.RoomType, description:item.Description, image:item.image, HotelKey:item.key})">
+                           >                          
+                        </button>                                      
+              </div> 
             </div>
-   
-          </ion-card-content>
-      
-        </ion-card>
-  
+          </ion-card-content>    
+        </ion-card> 
     </div>
   </ion-content>
   
 
-  <!-- <ion-footer>
-    <ion-toolbar>
-      <p>Ash, Misty, Brock</p>
-      <ion-buttons end>
-        <button ion-button icon-end color="royal">
-          Send
-          <ion-icon name="send"></ion-icon>
-        </button>
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-footer> -->

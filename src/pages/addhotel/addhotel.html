@@ -16,7 +16,7 @@
                                  
 
 
-<ion-content>
+<ion-content *ngFor = "let item of user">
 
 
     <div class="container">
@@ -24,7 +24,7 @@
         <div class="logo">
   
           <div class="image">
-            <img src="../../assets/imgs/hotel.jpg" alt="" class="image">
+            <img src="{{picture}}" alt="" class="image">
           </div>
   
           </div>
@@ -34,27 +34,38 @@
           </div>
       
   
-          <div class="details">
-            <h1>Info</h1>
-  
-            <div class="d1">
-              <ion-icon name="contact" class="icon"></ion-icon>
-              <ion-input placeholder="Name" ></ion-input>
-            </div>
-  
-            <div class="d1">
-            <ion-icon name="call"></ion-icon>
-            <ion-input placeholder="Mobile"></ion-input>
+          <div class="detailsOne">
+
+              <div class="details">
+                  <h1>Info</h1>
+                  <ion-list>
+                    <ion-item>
+                        <ion-input [(ngModel)]="name" placeholder='{{item.Username}}'></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-input [(ngModel)]="Contact" placeholder='{{item.Contact}}'></ion-input>
+                      </ion-item>
+                  </ion-list>
+          
+                  <!-- <div class="d1">
+                    <ion-icon name="contact" class="icon"></ion-icon>
+                 <ion-input [(ngModel)]="name" placeholder='{{item.Username}}'></ion-input>
+                  </div>
+          
+                  <div class="d1">
+                    <ion-icon name="contact"></ion-icon>
+                  
+                    <ion-input [(ngModel)]="Contact" placeholder='{{item.Contact}}'></ion-input>
+                  </div>
+           -->
+                  <!-- <div class="d1">
+                  <ion-icon name="call"></ion-icon>
+                  {{item.Username}}
+                </div> -->
+                </div>
+          
           </div>
-  
-          <div class="d1">
-            <ion-icon name="mail"></ion-icon>
-            <ion-input placeholder="Email"></ion-input>
-          </div>
-  
-          </div>
-  
-          <button class="btn2">Save</button>
+          <button class="btn2" (click)="profile()">Save</button>
          
     </div>
   

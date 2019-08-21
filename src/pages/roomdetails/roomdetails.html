@@ -6,24 +6,37 @@
   <div class="container">
    
       <div class="logo">
-
+<img src="{{image}}" alt="">
         </div>
 
-        <div class="login" >
-         <img src="{{item.image}}" alt="" class="logine" >
-          </div>
+
+
+  <div class="login" >
+
+    <h4>{{roomType}}</h4>
+   <h4>Location {{item.Location}}</h4>
+   <div class="star">
+     <ion-icon name="star"></ion-icon>
+     <ion-icon name="star"></ion-icon>
+     <ion-icon name="star"></ion-icon>
+     <ion-icon name="star"></ion-icon>
+     <ion-icon name="star"></ion-icon>
+ </div>
+ 
+     </div>
+
+      
 
           
           <div class="last">
               <h4>Description</h4>
-             {{item.Description}}
-        
+             {{description}}
               <h4>Photos</h4>
 
 
               <ion-slides pager class="slides">
                   <ion-slide  class="slideses" >
-                    <img src="{{item.image}}" alt="" class="slideses" >
+                    <img src="{{image}}" alt="" class="slideses" >
                   </ion-slide>
                 
                   <ion-slide  class="slideses">
@@ -31,12 +44,13 @@
                   </ion-slide>
                 
                   <ion-slide class="slideses">
-                    <img src="{{item.image}}" alt="" class="slideses" >
+                    <img src="{{image}}" alt="" class="slideses" >
                   </ion-slide>
                 </ion-slides><br>
                
                 <div class="Bbtn">
                   <button class="BookButton" (click)="booknow()">Book</button>
+           
               </div>
           </div>
         

@@ -2,51 +2,73 @@
 <ion-content >
 
   <div class="container">
+   
+      <div class="logo">
 
-      <div class="dis"></div>
+        </div>
 
-    <div class="contents">
+        <div class="login">
 
-           <div class="guestroom">
-
-
-              <div class="room1">
-                  <ion-input type="date">Checkin</ion-input>
-                  <ion-list>
+          <div class="contents">
+      
+              <div class="guestroom">
+      
+   
+                   <div class="room1">
                       <ion-item>
-                        <ion-label>Guests</ion-label>
-                        <ion-select  >
-                            <!-- <ion-select [(ngModel)]="details.children" > -->
-                          <ion-option value="1">1</ion-option>
-                          <ion-option value="2">2</ion-option>
-                          <ion-option value="3">3</ion-option>
-                        </ion-select>
-                      </ion-item>
-                    </ion-list>
-              </div>
-          
-              <div class="room">
-                  <ion-input type="date">Checkout</ion-input>
-                  <ion-list>
-                      <ion-item>
-                        <ion-label>room</ion-label>
-                        <ion-select>
-                          <ion-option value="1">1</ion-option>
-                          <ion-option value="2">2</ion-option>
-                          <ion-option value="3">3</ion-option>
-                        </ion-select>
-                      </ion-item>
-                    </ion-list>
-              </div>
+                          <ion-label>Checkin</ion-label>
+                          <ion-datetime 
+                            monthShortNames="Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Des"
+                            [(ngModel)]="Customer.CheckinDate" (ngModelChange)="showDate1()">
+                          </ion-datetime>
+                        </ion-item>
 
-           </div>
+                        <ion-item>
+                            <ion-label>Checkout</ion-label>
+                            <ion-datetime 
+                            monthShortNames="Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Des"
+                            [(ngModel)]="Customer.CheckOutDate" (ngModelChange)="showDate2()">
+                          </ion-datetime>
+                          </ion-item>
+                            <ion-item>
+                              <ion-label>Guests</ion-label>
+                              <ion-select  [(ngModel)]="Guests"  (ionChange) ="onChange($event)">
+                                <ion-option value="1">1</ion-option>
+                                <ion-option value="2">2</ion-option>
+                                <ion-option value="3">3</ion-option>
+                              </ion-select>
+                            </ion-item>
+                          
+                    </div>
+                   
+                    <div class="room">
+                      
+                        <ion-list>
+                            <ion-item>
+                              <ion-label>Room</ion-label>
+                              <ion-select [(ngModel)]="Room"  (ionChange) ="onChange($event)">
+                                <ion-option value="1">1</ion-option>
+                                <ion-option value="2">2</ion-option>
+                                <ion-option value="3">3</ion-option>
+                              </ion-select>
+                            </ion-item>
+                          </ion-list>
+                    </div>
+      
+                 </div>
+              
+               <div class="Amount">
+                  <h1>Total amount  R{{price}}.00</h1><br><br>
+               </div>
         
-         <div class="Amount">
-            <h1>Total amount</h1><br><br>
-            <button (click)="payment()" class="save">Pay now</button>
-         </div>
-  
-    </div>
-
+          </div>
+      
+        <div class="button">
+            <button class="loginButton" (click)="payment()">Pay now</button><br>
+        </div>
+        
+        
+          </div>
   </div>
+
 </ion-content>

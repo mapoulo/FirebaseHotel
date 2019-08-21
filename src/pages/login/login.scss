@@ -1,4 +1,7 @@
 page-login {
+    .scroll-content {
+        padding-bottom: 0 !important;
+    }
 
     .container{
         display: flex;
@@ -11,7 +14,9 @@ page-login {
   
   
     .logo{
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
         width: 100%;
         height: 30%;
         background-color: rgb(91, 182, 235);
@@ -30,12 +35,21 @@ page-login {
         bottom: 5%;
         border-radius: 10px;
     }
+
+    .Ite{
+        text-align: center; 
+    }
+
+    .float{
+        color: gray;
+    }
   
   .ion_input{
       text-align: center;
       border: none;
       border-bottom-style: solid  ;
       color:  rgb(91, 182, 235) ;
+      width: 100%;
   }
   
   h1{
@@ -56,14 +70,30 @@ page-login {
       color: white;
       border-radius: 60px;
       font-size: 20px;
+      margin: auto;
   }
   
   .loginButtone{
+      margin-top: 40px;
+      margin: auto;
+      text-align: center;
       height: 40px;
       width: 60%;
       background-color: white;
       color:  rgb(91, 182, 235);
       font-size: 20px;
   }
-    
+
+  .bb{
+      display: flex;
+      flex-direction: column;
+  }
+  .img{
+      position: relative;
+      top:-20px;
+  width: 50%;
+  height: 50%; 
+  border-radius: 5%;
+  
+  }   
 }

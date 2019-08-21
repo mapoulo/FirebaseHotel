@@ -33,8 +33,10 @@ export class ViewhotelPage {
     console.log('ionViewDidLoad ViewhotelPage');
   }
 
-  book(){
-    this.navCtrl.push(BookingPage);
+  book(key){
+    console.log('Hotel key in the viewRooms', key);
+    
+    this.navCtrl.push(BookingPage,{HotelKey : key});
   }
 
   Delete(key){

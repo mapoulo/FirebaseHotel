@@ -1,0 +1,59 @@
+<ion-content   >
+   
+    <!-- *ngFor = "let item of user" -->
+    <div class="container">
+     
+        <div class="logo">
+  
+          <div class="image">
+            <!-- <img src="{{item.Image}}" alt="" class="image"> -->
+          </div>
+  
+          </div>
+  
+          <div class="Button">
+            <button class="btn" (click)="EditProfile(item.key)">Edit Profile</button>
+          </div>
+      
+  <div class="detailsOne">
+  
+      <div class="details">
+          <h1>Info</h1>
+  
+          <div class="d1">
+            <ion-icon name="contact" class="icon"></ion-icon>
+           <!-- {{item.Username}} -->
+          </div>
+  
+          <div class="d1">
+            <ion-icon name="mail"></ion-icon>
+            <!-- {{item.Email}} -->
+          </div>
+  
+          <div class="d1">
+          <ion-icon name="call"></ion-icon>
+          <!-- {{item.Contact}} -->
+        </div>
+        </div>
+  
+        <div style="height: 50px"></div>
+  
+  
+        <ion-list>
+          <ion-item>
+  
+          </ion-item>
+        </ion-list>
+  
+  </div>
+          
+  
+          <button class="btn2" (click)="logout()">Log Out</button>
+         
+    </div>
+  
+  
+  
+  
+  </ion-content>
+  

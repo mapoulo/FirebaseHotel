@@ -4,18 +4,65 @@
      
       <div class="logo">
 
+<div class="Picture">
+    
+      <img src="{{users.Image}}" alt=""  class="Picture">
+</div>
+<ion-icon name="camera"  (click)="takePhoto(1)" class="camera"></ion-icon> 
         </div>
 
         <div class="login">
-          <h1>Register</h1>
+          <!-- <h1>Register</h1> -->
+
+          
+          <form  [formGroup]="loginForm" class="login">
+        
+              <input type="text" formControlName="email" [(ngModel)]="users.email" placeholder="Email" class="ion_input">
+
+              <div class="error" *ngFor="let validate of validation_messages.email">
+                  <div class="messages" *ngIf="loginForm.get('email').hasError(validate.type) && (loginForm.get('email').dirty || loginForm.get('email').touched)">
+                    {{validate.message}}
+                  </div>
+                </div>
+
+
+              <input type="password" formControlName="password"   [(ngModel)]="users.password" placeholder="password" class="ion_input">
+
+              <div class="error" *ngFor="let validate of validation_messages.password">
+                  <div class="messages" *ngIf="loginForm.get('password').hasError(validate.type) && (loginForm.get('password').dirty || loginForm.get('password').touched)">
+                    {{validate.message}}
+                  </div>
+                </div>
+
+
+
+              <input type="text" formControlName="Name" [(ngModel)]="users.Name" placeholder="Name" class="ion_input">
+
+              <div class="error" *ngFor="let validate of validation_messages.password">
+                  <div class="messages" *ngIf="loginForm.get('Name').hasError(validate.type) && (loginForm.get('Name').dirty || loginForm.get('Name').touched)">
+                    {{validate.message}}
+                  </div>
+                </div>
+
+
+
+              <input type="text" formControlName="Mobile"   [(ngModel)]="users.Mobile" placeholder="Mobile" class="ion_input">
+
+              <div class="error" *ngFor="let validate of validation_messages.password">
+                  <div class="messages" *ngIf="loginForm.get('Mobile').hasError(validate.type) && (loginForm.get('Mobile').dirty || loginForm.get('Mobile').touched)">
+                    {{validate.message}}
+                  </div>
+                </div>
+
+
+            <div class="button">
+                <button class="loginButton" (click)="SaveProfile()">Register</button>
+            </div>
+
+
+          </form>
+
          
-          <input type="text" [(ngModel)]="user.email" placeholder="Email" class="ion_input">
-          <input type="password"   [(ngModel)]="user.password" placeholder="password" class="ion_input">
-          <input type="text" [(ngModel)]="user.Name" placeholder="Name" class="ion_input">
-          <input type="text"   [(ngModel)]="user.Mobile" placeholder="Mobile" class="ion_input">
-        <div class="button">
-            <button class="loginButton" (click)="createRegister(user)">Register</button>
-        </div>
         
         
           </div>

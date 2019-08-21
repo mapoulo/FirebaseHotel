@@ -4,6 +4,10 @@ import * as firebase from 'firebase';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 
 import { SnapShots } from '../../app/Environment';
+// import { ProfilePage } from '../profile/profile';
+import { HomePage } from '../home/home';
+
+
 /**
  * Generated class for the AddhotelPage page.
  *
@@ -19,22 +23,55 @@ import { SnapShots } from '../../app/Environment';
 export class AddhotelPage {
 
   hotelData:any = {};
-  array = [];
-  ref = firebase.database().ref('Hotels/');
+  user = [];
+  ref  = firebase.database().ref('Profiles/');
   picture: string;
   Picture_url: string;
+  key : string;
+  name : string;
+  Contact : string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController, private camera: Camera) {
-    this.ref.on('value', res => {
-      this.array = SnapShots(res);
+    this.key = this.navParams.get('key');
+
+    firebase.auth().onAuthStateChanged((user) => {
+      if(user) {
+        this.ref.orderByChild('userUid').equalTo(user.uid).on('value', (snap) => {
+           this.user  = SnapShots(snap);
+        });
+ 
+      }
     })
+
+  
+    
   }
 
 
 
   ionViewDidLoad() {
+    // this.user = {};
+    // this.ref.on('value', res => {
+    //   this.user = SnapShots(res);
+    // })
     // console.log('ionViewDidLoad AddhotelPage');
     console.log('Image url '+this.Picture_url);
+  }
+
+  profile(){
+    if(this.name !== undefined && this.Contact !== undefined){
+      firebase.database().ref('Profiles/'+ this.key).update({Username:this.name, Contact:this.Contact});
+      let alert = this.alertCtrl.create({
+        title: '', 
+        subTitle: 'Profile edited',
+        buttons: ['Ok']
+      });
+      alert.present();
+      this.navCtrl.push(HomePage);
+    }else{
+      this.navCtrl.push(HomePage);
+    }
+   
   }
 
   
@@ -72,7 +109,8 @@ takePhoto(sourcetype: number) {
       title: 'Image Upload', 
       subTitle: 'Image Uploaded to firebase',
       buttons: ['Ok']
-    }).present();
+    });
+    alert.present();
   })
 }
 
@@ -107,14 +145,16 @@ addHotelDetails(){
       title: '', 
       subTitle: 'Successfully added',
       buttons: ['Ok']
-    }).present();
+    });
+    alert.present();
 
   }else{
     let alert = this.alertCtrl.create({
       title: '', 
       subTitle: 'Fields cannot be empty',
       buttons: ['Ok']
-    }).present();
+    });
+    alert.present();
   }
 }
 
